@@ -1,4 +1,4 @@
-ppeline {
+pipeline {
   environment {
     imagename = "elenayvf/simple-todo-app"
     registry = "elenayvf/simple-todo-app"
