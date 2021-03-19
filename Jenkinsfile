@@ -33,7 +33,7 @@ pipeline {
     }
     stage('Run Image from Dockerhub'){
       steps{
-          sh "pull $imagename:latest"
+          sh "docker pull $imagename:latest"
           sh "docker run -dp 3000:3000 $imagename:latest"
       }
     }
