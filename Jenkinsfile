@@ -31,6 +31,12 @@ pipeline {
         }
       }
     }
+    stage('Run Image from Dockerhub'){
+      steps{
+          sh "pull $imagename:latest"
+          sh "docker run -dp 3000:3000 $imagename:latest"
+      }
+    }
     stage('Remove Unused docker image') {
       steps{
         sh "docker rmi $imagename:$BUILD_NUMBER"
